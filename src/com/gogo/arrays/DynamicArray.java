@@ -2,15 +2,15 @@ package com.gogo.arrays;
 
 import java.util.ArrayList;
 
-public class Array<T> {
+public class DynamicArray<T> {
 
-    private ArrayList<T> arrayList;
+    private final ArrayList<T> arrayList;
 
-    public Array() {
+    public DynamicArray() {
         arrayList = new ArrayList<>();
     }
 
-    public void push(T newItem){
+    public void push(T newItem) {
         //O(1)
         arrayList.add(newItem);
     }
