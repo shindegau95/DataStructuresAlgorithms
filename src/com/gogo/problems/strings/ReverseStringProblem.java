@@ -1,8 +1,8 @@
-package com.gogo.problems;
+package com.gogo.problems.strings;
 
 public class ReverseStringProblem {
     //create a function that reverses string
-    public String reverseString(String input) {
+    public static String reverseString(String input) {
         if (input == null) {
             throw new NullPointerException();
         } else if (input.length() == 1) {

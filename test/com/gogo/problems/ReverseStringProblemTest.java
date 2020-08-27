@@ -1,6 +1,6 @@
 package com.gogo.problems;
 
-import org.junit.jupiter.api.BeforeEach;
+import com.gogo.problems.strings.ReverseStringProblem;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -8,17 +8,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ReverseStringProblemTest {
 
-    ReverseStringProblem reverseStringProblem;
-
-    @BeforeEach
-    void setUp() {
-        reverseStringProblem = new ReverseStringProblem();
-    }
-
     @Test
     void reverseString() {
-        assertEquals("cba", reverseStringProblem.reverseString("abc"));
-        assertEquals("a", reverseStringProblem.reverseString("a"));
-        assertThrows(NullPointerException.class, () -> reverseStringProblem.reverseString(null));
+        assertEquals("cba", ReverseStringProblem.reverseString("abc"));
+        assertEquals("a", ReverseStringProblem.reverseString("a"));
+        assertThrows(NullPointerException.class, () -> ReverseStringProblem.reverseString(null));
     }
 }
