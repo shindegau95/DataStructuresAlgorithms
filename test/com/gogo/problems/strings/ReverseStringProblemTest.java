@@ -1,6 +1,5 @@
-package com.gogo.problems;
+package com.gogo.problems.strings;
 
-import com.gogo.problems.strings.ReverseStringProblem;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
