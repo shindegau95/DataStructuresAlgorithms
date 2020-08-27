@@ -20,6 +20,7 @@ public class TwoSumProblem {
          * sum(e@low, e@high) < target  | move high to the left
          * sum(e@low, e@high) > target  | move low to the right
          * if(low > high) break and return null
+         * O(log n)
          * */
         int low = 0;
         int high = nums.length - 1;
@@ -44,6 +45,7 @@ public class TwoSumProblem {
          * While traversing throught the array, maintain a hashmap of <compliment, index>
          * compliment = target - element
          * check if the element exists in compliments, then return the map.entry
+         * O(nlogn)
          * */
 
         Map<Integer, Integer> compliments = new HashMap<>();

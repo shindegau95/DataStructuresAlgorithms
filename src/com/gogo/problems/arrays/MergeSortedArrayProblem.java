@@ -11,6 +11,7 @@ public class MergeSortedArrayProblem {
          * end array will have a size equal to a.size + b.size
          * let i = iterator on a, j = iterator on b
          * compare a[i] with a[j] and put the smaller one in merged
+         * O(a+b)
          * */
         int totalSize = a.length + b.length;
         int[] merged = new int[totalSize];
