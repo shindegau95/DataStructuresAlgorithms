@@ -46,6 +46,17 @@ class StaticArrayTest {
     }
 
     @Test
+    void unshiftThrowsException() {
+        staticArray.push(2);
+        staticArray.push(3);
+        staticArray.push(4);
+        staticArray.push(5);
+        staticArray.push(6);
+
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> staticArray.unshift(1));
+    }
+
+    @Test
     void splice() {
         staticArray.push(1);
         staticArray.push(2);
