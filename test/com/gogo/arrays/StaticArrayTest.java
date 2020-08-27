@@ -21,6 +21,9 @@ class StaticArrayTest {
         staticArray.push(5);
         assertEquals(1, staticArray.size());
         assertEquals(5, staticArray.get(0));
+        staticArray.push(7);
+        assertEquals(2, staticArray.size());
+        assertEquals(7, staticArray.get(1));
     }
 
     @Test

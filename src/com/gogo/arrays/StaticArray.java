@@ -3,35 +3,24 @@ package com.gogo.arrays;
 public class StaticArray<T> {
 
     private final T[] array;
+    private int length;
 
     public StaticArray(T[] array) {
         this.array = array;
+        this.length = 0;
     }
 
     public void push(T newItem) {
-        //O(n)
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == null) {
-                array[i] = newItem;
-                break;
-            }
-        }
+        //O(1)
+        array[length++] = newItem;
     }
 
     public T pop() {
-        //O(n)
-        if (array[0] == null) {
-            return null;
-        }
-        for (int i = 0; i < array.length - 1; i++) {
-            if (array[i + 1] == null) {
-                T popped = array[i];
-                array[i] = null;
-                return popped;
-            }
-        }
-        array[array.length - 1] = null;
-        return array[array.length - 1];
+        //O(1)
+        T item = array[length - 1];
+        array[length - 1] = null;
+        length--;
+        return item;
     }
 
     public void unshift(T newItem) {
@@ -43,6 +32,7 @@ public class StaticArray<T> {
             array[i] = array[i - 1];
         }
         array[0] = newItem;
+        length++;
     }
 
     public void splice(int start, int numberOfElementsToBeDeleted) {
@@ -54,6 +44,7 @@ public class StaticArray<T> {
         } else {
             for (int i = start + Math.max(0, numberOfElementsToBeDeleted - 1); i >= start; i--) {
                 array[i] = null;
+                length--;
             }
         }
     }
@@ -63,13 +54,7 @@ public class StaticArray<T> {
     }
 
     public int size() {
-        //O(n)
-        int size;
-        for (size = 0; size < array.length; size++) {
-            if (array[size] == null) {
-                break;
-            }
-        }
-        return size;
+        //O(1)
+        return length;
     }
 }
