@@ -3,7 +3,7 @@ package com.gogo.problems.arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class ContainsDuplicate {
+public class ContainsDuplicateProblem {
     /**
      * Given an array of integers, find if the array contains any duplicates.
      * <p>
