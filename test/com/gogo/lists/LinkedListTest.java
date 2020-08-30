@@ -66,4 +66,14 @@ class LinkedListTest {
         linkedList.delete(3);
         assertEquals(0, linkedList.size);
     }
+
+    @Test
+    void testLookup() {
+        assertEquals(null, linkedList.lookup(5));
+        linkedList.append(1);
+        linkedList.append(2);
+        linkedList.append(3);
+        assertEquals(null, linkedList.lookup(5));
+        assertEquals(1, linkedList.lookup(2));
+    }
 }

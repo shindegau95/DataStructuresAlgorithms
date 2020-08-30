@@ -111,6 +111,22 @@ public class LinkedList<T> {
         }
     }
 
+    public Integer lookup(T data) {
+        Node traversalNode = head;
+        int i = 0;
+        if (traversalNode == null) {
+            return null;
+        }
+        while (traversalNode.next != null) {
+            if (traversalNode.data == data) {
+                return i;
+            }
+            traversalNode = traversalNode.next;
+            i++;
+        }
+        return null;
+    }
+
     private Node getLastNode() {
         if (head == null) {
             return null;
