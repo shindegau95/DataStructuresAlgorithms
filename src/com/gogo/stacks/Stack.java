@@ -28,6 +28,7 @@ public class Stack<T> {
             if (top == null) {
                 bottom = null;
             }
+            size--;
             return temp.data;
         }
         return null;
