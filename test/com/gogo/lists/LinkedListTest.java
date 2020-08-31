@@ -76,4 +76,14 @@ class LinkedListTest {
         assertEquals(null, linkedList.lookup(5));
         assertEquals(1, linkedList.lookup(2));
     }
+
+    @Test
+    void testReverse() {
+        linkedList.append(1);
+        linkedList.append(2);
+        linkedList.append(3);
+        linkedList.reverse();
+        assertEquals(3, linkedList.size);
+        linkedList.print();
+    }
 }

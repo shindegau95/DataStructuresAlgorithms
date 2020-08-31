@@ -2,6 +2,7 @@ package com.gogo.lists;
 
 public class LinkedList<T> {
     Node<T> head;
+    Node<T> tail;
     int size;
 
     public LinkedList() {
@@ -12,10 +13,12 @@ public class LinkedList<T> {
         Node newNode = new Node(newData);
         if (head == null) {
             head = newNode;
+            tail = newNode;
             size = 1;
         } else {
             Node endNode = getLastNode();
             endNode.next = newNode;
+            tail = newNode;
             size++;
         }
     }
@@ -24,6 +27,7 @@ public class LinkedList<T> {
         Node newNode = new Node(newData);
         if (head == null) {
             head = newNode;
+            tail = newNode;
             size = 1;
         } else {
             newNode.next = head;
@@ -90,6 +94,9 @@ public class LinkedList<T> {
                     prev.next = traversalNode.next;
                     size--;
                     found = true;
+                    if (tail == traversalNode) {
+                        tail = prev;
+                    }
                     break;
                 }
                 prev = traversalNode;
@@ -136,5 +143,34 @@ public class LinkedList<T> {
             traversalNode = traversalNode.next;
         }
         return traversalNode;
+    }
+
+    public void reverse() {
+        Node traversalNode = head;
+        if (traversalNode == null || traversalNode.next == null) {
+            return;
+        }
+        tail = head;
+        Node nextNode = traversalNode.next;
+        while (nextNode != null) {
+            Node temp = nextNode.next;
+            nextNode.next = traversalNode;
+            traversalNode = nextNode;
+            nextNode = temp;
+        }
+        this.head.next = null;
+        this.head = traversalNode;
+    }
+
+    public void print() {
+        Node traversalNode = head;
+        if (traversalNode == null) {
+            System.out.println("Empty List");
+        }
+        while (traversalNode != null) {
+            System.out.print(traversalNode.data + " ");
+            traversalNode = traversalNode.next;
+        }
+        System.out.println();
     }
 }

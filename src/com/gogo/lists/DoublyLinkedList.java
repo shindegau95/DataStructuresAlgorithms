@@ -103,6 +103,7 @@ public class DoublyLinkedList<T> {
         }
     }
 
+    //todo change this to get value using variable size
     public int size() {
         DoublyNode traversalNode = head;
         if (traversalNode == null) {
@@ -126,5 +127,17 @@ public class DoublyLinkedList<T> {
             traversalNode = traversalNode.next;
         }
         System.out.println();
+    }
+
+    public void reverse() {
+        if (head == null || head.next == null) {
+            return;
+        }
+        DoublyNode traversalNode = head;
+        DoublyNode second = traversalNode.next;
+        while (traversalNode != null) {
+            DoublyNode temp = second.next;
+
+        }
     }
 }
