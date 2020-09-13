@@ -1,7 +1,10 @@
 package com.gogo.datastructures.trees;
 
+import com.gogo.datastructures.queues.Queue;
+
 public class BinaryTree<T> {
     Node root;
+    Queue<Node> queue = new Queue<>();
 
     public void insert(int data) {
         Node newNode = new Node(data);
@@ -130,6 +133,10 @@ public class BinaryTree<T> {
         traverseAcending(root);
         System.out.println("Descending");
         traverseDescending(root);
+        System.out.println("BFS");
+        traverseBFS();
+        System.out.println("DFS");
+        traverseDFS();
     }
 
     public void traverseAcending(Node root) {
@@ -148,5 +155,36 @@ public class BinaryTree<T> {
         traverseDescending(root.right);
         System.out.println(root.data);
         traverseDescending(root.left);
+    }
+
+    public void traverseBFS() {
+        queue.enqueue(root);
+        traverseBFSNode();
+    }
+
+    private void traverseBFSNode() {
+        while (queue.size() != 0) {
+            Node node = queue.dequeue();
+            System.out.println(node.data);
+            if (node.left != null) {
+                queue.enqueue(node.left);
+            }
+            if (node.right != null) {
+                queue.enqueue(node.right);
+            }
+        }
+    }
+
+    public void traverseDFS() {
+        traverseDFSNode(root);
+    }
+
+    private void traverseDFSNode(Node node) {
+        if (node == null) {
+            return;
+        }
+        traverseDFSNode(node.left);
+        System.out.println(node.data);
+        traverseDFSNode(node.right);
     }
 }
