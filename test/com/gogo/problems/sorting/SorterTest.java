@@ -41,4 +41,10 @@ class SorterTest {
         sorter = new MergeSort();
         assertArrayEquals(new int[]{1, 2, 3, 4, 5}, sorter.sort(arr));
     }
+
+    @Test
+    void quickSort() {
+        sorter = new QuickSort();
+        assertArrayEquals(new int[]{1, 2, 3, 4, 5}, sorter.sort(arr));
+    }
 }
