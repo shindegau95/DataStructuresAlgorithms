@@ -12,7 +12,7 @@ public class InsertionSort implements Sorter {
      * */
 
     @Override
-    public void sort(int[] arr) {
+    public int[] sort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             for (int j = i - 1; j >= 0; j--) {
                 if (arr[i] < arr[j]) {
@@ -23,5 +23,6 @@ public class InsertionSort implements Sorter {
                 }
             }
         }
+        return arr;
     }
 }

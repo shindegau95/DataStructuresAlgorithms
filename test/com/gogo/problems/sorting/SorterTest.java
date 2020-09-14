@@ -35,4 +35,10 @@ class SorterTest {
         sorter.sort(arr);
         assertArrayEquals(new int[]{1, 2, 3, 4, 5}, arr);
     }
+
+    @Test
+    void mergeSort() {
+        sorter = new MergeSort();
+        assertArrayEquals(new int[]{1, 2, 3, 4, 5}, sorter.sort(arr));
+    }
 }

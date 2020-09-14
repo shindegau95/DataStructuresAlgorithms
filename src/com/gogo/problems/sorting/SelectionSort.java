@@ -10,7 +10,7 @@ public class SelectionSort implements Sorter {
      * */
 
     @Override
-    public void sort(int[] arr) {
+    public int[] sort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             int lowest = arr[i];
             int lowestIndex = i;
@@ -24,5 +24,6 @@ public class SelectionSort implements Sorter {
             arr[i] = lowest;
             arr[lowestIndex] = temp;
         }
+        return arr;
     }
 }
