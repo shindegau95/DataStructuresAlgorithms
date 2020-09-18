@@ -13,7 +13,7 @@ The project aims to have a collection of the basic data structures and algorithm
     * Stack
     * Queue
     * Tree
-      * Binary Searrch Tree
+      * Binary Search Tree
       
   - Algorithms
   - Problems
