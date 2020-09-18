@@ -6,6 +6,7 @@ public class SubsetSumProblem {
      * eg.
      * Input arr[] = {2, 3, 7, 8, 10}
      * sum = 11
+     * Output true
      * */
 
     public boolean isSumPresent(int[] arr, int sum, int n) {
