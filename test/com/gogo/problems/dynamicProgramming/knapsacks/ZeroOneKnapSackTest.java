@@ -21,5 +21,7 @@ class ZeroOneKnapSackTest {
         int capacity = 7;
 
         assertEquals(9, zeroOneKnapSack.knapSackRecursive(capacity, 4, w, val));
+        assertEquals(9, zeroOneKnapSack.knapSackMemoizedSolution(capacity, 4, w, val));
+        assertEquals(9, zeroOneKnapSack.knapSackTabular(capacity, 4, w, val));
     }
 }
