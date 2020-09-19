@@ -10,13 +10,13 @@ public class SubsetSumProblem {
      * */
 
     public boolean isSumPresent(int[] arr, int sum, int n) {
-        if (sum == 0 || sum == arr[n]) {
+        if (sum == 0) {
             return true;
-        } else if (n == 0 && sum > arr[n]) {
+        } else if (n == 0) {
             return false;
         } else {
             if (arr[n - 1] > sum) {
-                return false;
+                return isSumPresent(arr, sum, n - 1);
             } else {
                 boolean included = isSumPresent(arr, sum - arr[n - 1], n - 1);
                 boolean excluded = isSumPresent(arr, sum, n - 1);

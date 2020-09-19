@@ -16,7 +16,7 @@ class EqualSumPartitionTest {
 
     @Test
     void isEqualSumPartitionPossible() {
-        int[] arr = {1, 5, 11, 5};
+        int[] arr = {1, 5, 10, 5, 1};
         assertTrue(equalSumPartition.isEqualSumPartitionPossible(arr));
     }
 }

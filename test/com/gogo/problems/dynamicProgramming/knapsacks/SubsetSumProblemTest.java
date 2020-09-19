@@ -18,6 +18,6 @@ class SubsetSumProblemTest {
     void isSumPresent() {
         int[] arr = {2, 3, 7, 8, 10};
         int expectedSum = 11;
-        assertTrue(subsetSumProblem.isSumPresent(arr, expectedSum, 4));
+        assertTrue(subsetSumProblem.isSumPresent(arr, expectedSum, arr.length));
     }
 }

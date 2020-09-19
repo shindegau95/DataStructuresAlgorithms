@@ -16,9 +16,11 @@ public class CountSubsetProblem {
             return 0;
         } else {
             if (arr[n - 1] > sum) {
-                return 0;
+                return countSubset(arr, sum, n - 1);
             } else {
-                return countSubset(arr, sum - arr[n - 1], n - 1) + countSubset(arr, sum, n - 1);
+                int included = countSubset(arr, sum - arr[n - 1], n - 1);
+                int excluded = countSubset(arr, sum, n - 1);
+                return included + excluded;
             }
         }
     }
