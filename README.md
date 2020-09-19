@@ -7,14 +7,6 @@ The project aims to have a collection of the basic data structures and algorithm
   Contains 3 packages
   
   - Data Structures
-    * Arrys
-    * Linked List | Doubly Linked List
-    * HashMap | HashTables
-    * Stack
-    * Queue
-    * Tree
-      * Binary Search Tree
-      
   - Algorithms
   - Problems
   
