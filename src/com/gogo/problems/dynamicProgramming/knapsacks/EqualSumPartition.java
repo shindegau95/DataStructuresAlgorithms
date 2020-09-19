@@ -10,7 +10,7 @@ public class EqualSumPartition {
      *
      * */
 
-    SubsetSumProblem subsetSumProblem = new SubsetSumProblem();
+    SubsetSumExistsProblem subsetSumExistsProblem = new SubsetSumExistsProblem();
 
     public boolean isEqualSumPartitionPossible(int[] arr) {
         int sum = 0;
@@ -24,7 +24,7 @@ public class EqualSumPartition {
         if (sum % 2 != 0) {
             return false;
         } else {
-            return subsetSumProblem.isSumPresent(arr, sum / 2, n);
+            return subsetSumExistsProblem.isSumPresent(arr, sum / 2, n);
         }
     }
 

@@ -1,6 +1,6 @@
 package com.gogo.problems.dynamicProgramming.knapsacks;
 
-public class CountSubsetProblem {
+public class CountSubsetWithSum {
     /*
      * Given an array, count the number of subsets
      * eg.

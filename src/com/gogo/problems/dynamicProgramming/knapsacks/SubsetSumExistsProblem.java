@@ -1,6 +1,6 @@
 package com.gogo.problems.dynamicProgramming.knapsacks;
 
-public class SubsetSumProblem {
+public class SubsetSumExistsProblem {
     /*
      * Given an array, is there a subset that gives the desired sum or not
      * eg.

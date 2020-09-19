@@ -5,19 +5,19 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class SubsetSumProblemTest {
+class SubsetSumExistsProblemTest {
 
-    SubsetSumProblem subsetSumProblem;
+    SubsetSumExistsProblem subsetSumExistsProblem;
 
     @BeforeEach
     void setUp() {
-        subsetSumProblem = new SubsetSumProblem();
+        subsetSumExistsProblem = new SubsetSumExistsProblem();
     }
 
     @Test
     void isSumPresent() {
         int[] arr = {2, 3, 7, 8, 10};
         int expectedSum = 11;
-        assertTrue(subsetSumProblem.isSumPresent(arr, expectedSum, arr.length));
+        assertTrue(subsetSumExistsProblem.isSumPresent(arr, expectedSum, arr.length));
     }
 }
