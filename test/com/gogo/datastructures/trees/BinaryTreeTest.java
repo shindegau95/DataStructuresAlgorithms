@@ -28,7 +28,6 @@ class BinaryTreeTest {
     void remove_root_noChild() {
         binaryTree.insert(4);
         binaryTree.remove(4);
-        binaryTree.print();
         assertEquals(null, binaryTree.root);
     }
 

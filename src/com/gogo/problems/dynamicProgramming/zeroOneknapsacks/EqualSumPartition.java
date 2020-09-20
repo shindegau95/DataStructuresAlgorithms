@@ -1,4 +1,4 @@
-package com.gogo.problems.dynamicProgramming.knapsacks;
+package com.gogo.problems.dynamicProgramming.zeroOneknapsacks;
 
 public class EqualSumPartition {
     /*

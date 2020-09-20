@@ -5,11 +5,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class CountSubsetWithDifferenceTest {
+class TargetSumTest {
 
     @Test
-    void countSubSetWithDifference() {
-        int[] arr = {1, 1, 3, 2};
+    void getCountForTargetSum() {
+        int[] arr = {1, 1, 2, 3};
         assertEquals(3, new CountSubsetWithDifference().countSubSetWithDifference(arr, 1));
     }
 }

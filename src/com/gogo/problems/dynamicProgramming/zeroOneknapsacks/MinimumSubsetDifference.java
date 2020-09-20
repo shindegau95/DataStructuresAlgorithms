@@ -1,4 +1,4 @@
-package com.gogo.problems.dynamicProgramming.knapsacks;
+package com.gogo.problems.dynamicProgramming.zeroOneknapsacks;
 
 public class MinimumSubsetDifference {
     /*
@@ -19,7 +19,7 @@ public class MinimumSubsetDifference {
      * need to minimize this
      * */
 
-    int minSubSet(int[] arr) {
+    public int minSubSet(int[] arr) {
         int sum = 0;
         for (int j : arr) {
             sum += j;

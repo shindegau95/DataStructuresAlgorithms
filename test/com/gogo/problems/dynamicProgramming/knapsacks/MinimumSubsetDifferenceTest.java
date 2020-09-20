@@ -1,5 +1,6 @@
 package com.gogo.problems.dynamicProgramming.knapsacks;
 
+import com.gogo.problems.dynamicProgramming.zeroOneknapsacks.MinimumSubsetDifference;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

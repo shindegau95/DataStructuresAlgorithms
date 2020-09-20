@@ -1,4 +1,4 @@
-package com.gogo.problems.dynamicProgramming.knapsacks;
+package com.gogo.problems.dynamicProgramming.zeroOneknapsacks;
 
 public class ZeroOneKnapSack {
     /*
@@ -75,7 +75,7 @@ public class ZeroOneKnapSack {
      *     7   5    4   0   1   1   4   5   7   8   9
      * */
 
-    int knapSackTabular(int capacity, int numberOfItems, int[] w, int[] val) {
+    public int knapSackTabular(int capacity, int numberOfItems, int[] w, int[] val) {
         t = new int[numberOfItems + 1][capacity + 1];
         for (int i = 1; i < numberOfItems + 1; i++) {
             for (int j = 1; j < capacity + 1; j++) {

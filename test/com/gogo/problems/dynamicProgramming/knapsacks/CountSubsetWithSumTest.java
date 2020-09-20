@@ -1,5 +1,6 @@
 package com.gogo.problems.dynamicProgramming.knapsacks;
 
+import com.gogo.problems.dynamicProgramming.zeroOneknapsacks.CountSubsetWithSum;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package com.gogo.problems.dynamicProgramming.knapsacks;
+package com.gogo.problems.dynamicProgramming.zeroOneknapsacks;
 
 public class CountSubsetWithDifference {
 
@@ -19,7 +19,7 @@ public class CountSubsetWithDifference {
      * sum(s1) = ( diff + totalSum ) / 2
      * */
 
-    int countSubSetWithDifference(int[] arr, int difference) {
+    public int countSubSetWithDifference(int[] arr, int difference) {
         int totalSum = 0;
         for (int i : arr) {
             totalSum += i;
