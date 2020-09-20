@@ -2,7 +2,7 @@ package com.gogo.problems.dynamicProgramming.knapsacks;
 
 public class CountSubsetWithSum {
     /*
-     * Given an array, count the number of subsets
+     * Given an array, count the number of subsets with given sum
      * eg.
      * Input arr[] = {2, 3, 5, 6, 8, 10}
      * sum = 10

@@ -15,7 +15,7 @@ public class MinimumSubsetDifference {
      *
      * for above array, the sum will be from 0 till 23
      * in fact the sums can be  = {sumSubSet, totalSum - sumSubSet}
-     * thus, difference = range - 2sumSubSet
+     * thus, difference = totalSum - 2sumSubSet
      * need to minimize this
      * */
 
