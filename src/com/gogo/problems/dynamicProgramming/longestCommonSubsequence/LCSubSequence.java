@@ -1,6 +1,6 @@
 package com.gogo.problems.dynamicProgramming.longestCommonSubsequence;
 
-public class LCS {
+public class LCSubSequence {
     /*
      * Given 2 strings x and y
      * x = "abcdgh"
@@ -69,6 +69,13 @@ public class LCS {
                 }
 
             }
+        }
+
+        for (int i = 0; i < x.length(); i++) {
+            for (int j = 0; j < y.length(); j++) {
+                System.out.print(t[i][j]);
+            }
+            System.out.println();
         }
 
         return t[x.length() - 1][y.length() - 1];
