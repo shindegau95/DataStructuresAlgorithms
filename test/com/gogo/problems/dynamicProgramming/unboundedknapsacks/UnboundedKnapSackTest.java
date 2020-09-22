@@ -23,4 +23,14 @@ class UnboundedKnapSackTest {
         int maxProfit = unboundedKnapSack.unboundedKnapSackRecursive(w, val, 4, capacity);
         assertEquals(9, maxProfit);
     }
+
+    @Test
+    void unboundedKnapSackRecursive2() {
+        int[] w = {1, 3, 4, 5};
+        int[] val = {10, 40, 50, 70};
+        int capacity = 8;
+
+        int maxProfit = unboundedKnapSack.unboundedKnapSackRecursive(w, val, 4, capacity);
+        assertEquals(110, maxProfit);
+    }
 }
