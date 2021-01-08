@@ -22,13 +22,7 @@ public class ClimbStairs {
          * 3 -> 1 + 2
          * 4 -> 2 + 3 = 5
          * */
-        if (n == 1) {
-            return 1;
-        } else if (n == 2) {
-            return 2;
-        } else {
-            return climbStairsRecursive(n - 1) + climbStairsRecursive(n - 2);
-        }
+        return climbStairsRecursive(n - 1) + climbStairsRecursive(n - 2);
     }
 
     public int climbStairs(int n) {

@@ -19,4 +19,12 @@ class CountSubsetWithSumTest {
         int sum = 11;
         System.out.println(countSubsetWithSum.countSubset(arr, sum, arr.length));
     }
+
+
+    @Test
+    void countSubset2() {
+        int[] arr = {0, 1, 1, 0, 1};
+        int sum = 2;
+        System.out.println(countSubsetWithSum.countSubset(arr, sum, arr.length));
+    }
 }
