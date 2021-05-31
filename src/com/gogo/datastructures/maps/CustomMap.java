@@ -3,7 +3,7 @@ package com.gogo.datastructures.maps;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomMap {
+public class CustomMap<K, V> {
 
     int maxSize;
     List<CustomEntry<Integer, String>>[] buckets;
@@ -18,20 +18,16 @@ public class CustomMap {
         buckets = new List[maxSize];
     }
 
-    private int hash(int key) {
-        return key % maxSize;
-    }
-
-    public void put(int key, String value) {
-        if (buckets[hash(key)] == null) {
-            buckets[hash(key)] = new ArrayList<>();
+    public void put(K key, V value) {
+        if (buckets[key.hashCode()] == null) {
+            buckets[key.hashCode()] = new ArrayList<>();
         }
         CustomEntry entry = new CustomEntry(key, value);
-        buckets[hash(key)].add(entry);
+        buckets[key.hashCode()].add(entry);
     }
 
-    public String get(int key) {
-        List<CustomEntry<Integer, String>> entries = buckets[hash(key)];
+    public String get(K key) {
+        List<CustomEntry<Integer, String>> entries = buckets[key.hashCode()];
         for (CustomEntry<Integer, String> entry : entries) {
             if (entry.getKey() == key) {
                 return entry.getValue();

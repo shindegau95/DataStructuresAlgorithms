@@ -16,4 +16,12 @@ public class CustomEntry<K, V> {
     public V getValue() {
         return value;
     }
+
+    @Override
+    public String toString() {
+        return "CustomEntry{" +
+                "key=" + key +
+                ", value=" + value +
+                '}';
+    }
 }
