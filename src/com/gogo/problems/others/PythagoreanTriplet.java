@@ -39,5 +39,38 @@ public class PythagoreanTriplet {
             }
         }
         return isTriplet;
+
+        /*
+         * 1 3 4 5 6
+         * 1 9 16 25 36
+         * pivot = 36
+         * low = 1
+         * high = 25
+         *
+         * */
+    }
+
+    public boolean isTripletPresentOptimal(int[] arr) {
+        Arrays.sort(arr);
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = arr[i] * arr[i];
+        }
+
+        int c = arr.length - 1, b = arr.length - 2, a = arr.length - 3;
+        while (a >= 0 && b > 0 && c > 1) {
+            if (b == a) {
+                a--;
+            }
+            if (arr[b] + arr[a] > arr[c]) {
+                a--;
+            } else if (arr[c] == arr[b] + arr[a]) {
+                return true;
+            } else {
+                //c>a+b
+                c--;
+                b--;
+            }
+        }
+        return false;
     }
 }
