@@ -1,6 +1,8 @@
 package com.gogo.problems.others;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class PythagoreanTriplet {
     /*
@@ -13,6 +15,7 @@ public class PythagoreanTriplet {
      * Output: False
      * */
 
+    //O(n^2)
     public boolean isTripletPresent(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (int) Math.pow(arr[i], 2);
@@ -50,6 +53,7 @@ public class PythagoreanTriplet {
          * */
     }
 
+    //O(nlogn)
     public boolean isTripletPresentOptimal(int[] arr) {
         Arrays.sort(arr);
         for (int i = 0; i < arr.length; i++) {
@@ -69,6 +73,26 @@ public class PythagoreanTriplet {
                 //c>a+b
                 c--;
                 b--;
+            }
+        }
+        return false;
+    }
+
+    //O(n^2)
+    public boolean isTripletPresentHashing(int[] arr){
+        //create hashset & add squares of numbers
+        Set<Integer> arrSet = new HashSet<>();
+        for(int i = 0; i < arr.length; i++){
+            arr[i] = (int) Math.pow(arr[i], 2);
+            arrSet.add(arr[i]);
+        }
+
+        for(int i = 0; i < arr.length; i++){
+            for(int j = i+1; j < arr.length; j++){
+                //if arrSet contains a^2+b^2, then element found
+                if(i != j && arrSet.contains(arr[i]+arr[j])){
+                    return true;
+                }
             }
         }
         return false;
