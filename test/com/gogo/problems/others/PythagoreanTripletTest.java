@@ -28,4 +28,11 @@ class PythagoreanTripletTest {
         assertFalse(triplet.isTripletPresentOptimal(new int[]{10, 4, 6, 12, 5}));
         assertTrue(triplet.isTripletPresentOptimal(new int[]{5, 7, 9, 12, 13, 15}));
     }
+
+    @Test
+    void isTripletPresentHashing() {
+        assertTrue(triplet.isTripletPresentHashing(new int[]{3, 1, 4, 6, 5}));
+        assertFalse(triplet.isTripletPresentHashing(new int[]{10, 4, 6, 12, 5}));
+        assertTrue(triplet.isTripletPresentHashing(new int[]{5, 7, 9, 12, 13, 15}));
+    }
 }
