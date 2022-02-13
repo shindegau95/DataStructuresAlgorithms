@@ -2,59 +2,70 @@ package com.gogo.datastructures.arrays;
 
 public class StaticArray<T> {
 
-    private final T[] array;
+    private T[] data;
     private int length;
 
-    public StaticArray(T[] array) {
-        this.array = array;
+    public StaticArray(T[] data) {
+        this.data = data;
         this.length = 0;
     }
 
-    public void push(T newItem) {
-        //O(1)
-        array[length++] = newItem;
+    public void push(T newData){
+        if(this.length == data.length){
+            throw new IndexOutOfBoundsException();
+        }else{
+            this.data[length++] = newData;
+        }
     }
 
-    public T pop() {
-        //O(1)
-        T item = array[length - 1];
-        array[length - 1] = null;
-        length--;
-        return item;
+    public T pop(){
+        if(length == -1){
+            throw new IndexOutOfBoundsException();
+        }else{
+            T dataToRemove = this.data[length-1];
+            this.data[length--] = null;
+            return dataToRemove;
+        }
     }
 
-    public void unshift(T newItem) {
-        //O(n)
-        if (array[array.length - 1] != null) {
-            throw new ArrayIndexOutOfBoundsException();
+    public int size(){
+        return this.length;
+    }
+
+    public T get(int position){
+        if(position > length || position<0){
+            throw new IndexOutOfBoundsException();
+        }else{
+            return data[position];
         }
-        for (int i = array.length - 1; i > 0; i--) {
-            array[i] = array[i - 1];
+    }
+
+    public void unshift(T newData){
+        if(data[length-1] == null){
+            throw new IndexOutOfBoundsException();
+        }else{
+            for(int i=length; i>0; i--){
+                data[i] = data[i-1];
+            }
+            data[0] = newData;
+            length++;
         }
-        array[0] = newItem;
-        length++;
     }
 
     public void splice(int start, int numberOfElementsToBeDeleted) {
-        //O(n)
-        if (start + Math.max(0, numberOfElementsToBeDeleted - 1) >= size()) {
-            //['a','b']
-            //splice(1,1)
+        if(start < 0 || start + numberOfElementsToBeDeleted >= length){
             throw new ArrayIndexOutOfBoundsException();
-        } else {
-            for (int i = start + Math.max(0, numberOfElementsToBeDeleted - 1); i >= start; i--) {
-                array[i] = null;
-                length--;
+        }else{
+
+            for(int i=start;i<start + numberOfElementsToBeDeleted;i++){
+                data[i] = null;
             }
+            for(int i=start + numberOfElementsToBeDeleted; i<length; i++){
+                data[i-numberOfElementsToBeDeleted]  = data[i];
+                data[i] = null;
+            }
+            length-=numberOfElementsToBeDeleted;
+
         }
-    }
-
-    public T get(int index) {
-        return array[index];
-    }
-
-    public int size() {
-        //O(1)
-        return length;
     }
 }
